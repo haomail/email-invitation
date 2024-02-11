@@ -6,15 +6,15 @@ def main():
     with open('emails.txt', 'r') as file:
         emails = [line.strip() for line in file]
     event = {
-            "summary": "[HMTE] 2nd Meeting Divisi Akademik",
-            "description": "Agenda: Timeline Proker",
+            "summary": "[HMTE] 3rd Meeting Divisi Akademik",
+            "description": "Agenda: Pembuatan KAK",
             "colorId": "9",
             "start": {
-                "dateTime": "2024-02-06T20:00:00+07:00",
+                "dateTime": "2024-02-12T21:00:00+07:00",
                 "timeZone": "Asia/Jakarta"
             },
             "end": {
-                "dateTime": "2024-02-06T21:00:00+07:00",
+                "dateTime": "2024-02-12T22:00:00+07:00",
                 "timeZone": "Asia/Jakarta"
             },
             "attendees": [{"email": email} for email in emails],
@@ -25,7 +25,7 @@ def main():
                 ]
             },
             #"location": "Toko Kopi Seduh",
-            "conferenceData": {"createRequest": {"conferenceSolutionKey": {"type": "hangoutsMeet"},"requestId": "2nd Meeting Divisi Akademik"}},
+            "conferenceData": {"createRequest": {"conferenceSolutionKey": {"type": "hangoutsMeet"},"requestId": "3rd Meeting Divisi Akademik"}},
         }
     event = service.events().insert(calendarId="primary",body=event,sendNotifications=True,conferenceDataVersion=1).execute()
 
